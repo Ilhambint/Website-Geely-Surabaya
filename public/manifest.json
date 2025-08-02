@@ -1,0 +1,26 @@
+{
+  "name": "Geely Surabaya - Dealer Resmi Mobil Listrik EV Jawa Timur",
+  "short_name": "Geely Surabaya",
+  "description": "Dealer resmi Geely Surabaya menyediakan mobil listrik EV terbaru: Geely EX5 MAX, EX2, Starray. Test drive gratis, harga terbaik, service center terpercaya di Jawa Timur.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
