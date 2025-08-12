@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Geely Surabaya - Dealer Resmi Mobil Listrik EV",
-  publisher: "Ilham Bintang ",
+  publisher: "PT. Geely Surabaya",
   formatDetection: {
     email: false,
     address: false,

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { X, Calendar, MapPin, User, ChevronLeft, ChevronRight } from "lucide-react"
+import { X, Calendar, MapPin, User, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Navbar } from "@/components/navbar"
@@ -26,13 +26,13 @@ export default function GalleryPage() {
   // Gallery images data - easy to add more images here
   const galleryImages: GalleryImage[] = [
     {
-      id: "delivery-1",
+      id: "spk-1",
       src: "/images/gallery/customer-delivery-1.jpeg",
-      title: "Serah Terima Geely EX5 MAX",
+      title: "Penandatanganan SPK Geely EX5 MAX",
       description:
-        "Serah terima kendaraan Geely EX5 MAX kepada customer di area Bandung. Terima kasih atas kepercayaannya memilih mobil listrik Geely.",
+        "Proses penandatanganan SPK (Surat Pesanan Kendaraan) Geely EX5 MAX di Surabaya. Terima kasih atas kepercayaannya memilih mobil listrik Geely untuk masa depan yang lebih hijau.",
       date: "31 Juli 2025",
-      location: "Bandung",
+      location: "Surabaya",
       category: "customer-delivery",
     },
     {
@@ -102,17 +102,70 @@ export default function GalleryPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Galeri <span className="text-blue-600">Geely Surabaya</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-              Dokumentasi perjalanan kami melayani customer terbaik di Jawa Timur. Setiap foto menceritakan kepercayaan
-              dan kepuasan customer terhadap mobil listrik Geely.
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/gallery-team-photo.jpeg"
+            alt="Tim Dealer Geely Surabaya - Pelayanan Terbaik Mobil Listrik EV"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
+          <Badge className="mb-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
+            📸 DOKUMENTASI TERBARU
+          </Badge>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Galeri <span className="text-blue-400">Geely Surabaya</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            Dokumentasi perjalanan kami melayani customer terbaik di Jawa Timur. Setiap foto menceritakan kepercayaan
+            dan kepuasan customer terhadap mobil listrik Geely.
+          </p>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-12 max-w-3xl mx-auto">
+            <div className="flex items-center justify-center space-x-3 mb-3">
+              <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+              <h3 className="font-bold text-blue-800">Tim Profesional Geely Surabaya</h3>
+            </div>
+            <p className="text-blue-700 leading-relaxed">
+              Dengan tim yang berpengalaman dan berdedikasi, kami berkomitmen memberikan pelayanan terbaik untuk setiap
+              customer. Dari konsultasi, test drive, hingga after sales service - kepuasan Anda adalah prioritas utama
+              kami.
             </p>
-            <Badge className="bg-blue-600 text-white px-6 py-2 text-lg">{galleryImages.length} Foto Terbaru</Badge>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
+              asChild
+            >
+              <Link href="/#booking">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Test Drive Gratis Sekarang
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold rounded-full bg-transparent"
+              asChild
+            >
+              <Link href="https://maps.google.com/?q=Geely+Surabaya" target="_blank">
+                <MapPin className="w-5 h-5 mr-2" />
+                Kunjungi Showroom
+              </Link>
+            </Button>
+          </div>
+
+          <div className="mt-8">
+            <Badge className="bg-white/20 text-white px-6 py-2 text-lg backdrop-blur-sm">
+              {galleryImages.length} Foto Terbaru
+            </Badge>
           </div>
         </div>
       </section>

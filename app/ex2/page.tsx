@@ -14,32 +14,66 @@ export default function GeelyEX2Page() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-pink-50 to-purple-50 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 text-lg animate-pulse">
-              🚗 GIIAS 2025 - SEGERA HADIR DI SURABAYA
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Geely EX2 <span className="text-pink-500">GIIAS 2025</span>
-              <div className="text-lg md:text-xl font-normal text-orange-600 mt-2">
-                📍 Saat ini di GIIAS - Segera Hadir di Surabaya Maret 2025
-              </div>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Revolusi SUV Listrik Urban Telah Tiba Di Indonesia!
-            </p>
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                <h3 className="font-bold text-orange-800">Status Ketersediaan</h3>
-              </div>
-              <p className="text-orange-700 text-sm leading-relaxed">
-                Geely EX2 saat ini sedang dipamerkan di <strong>GIIAS 2025</strong> dan akan segera hadir di showroom
-                Geely Surabaya pada <strong>Maret 2025</strong>. Pre-order sudah dibuka dengan benefit khusus untuk
-                early bird customer!
-              </p>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/geely-ex2-jumbotron.png"
+            alt="Geely EX2 Xingyuan - SUV Listrik Urban Premium Pink di GIIAS"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
+          <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 text-lg animate-pulse">
+            🚗 GIIAS SURABAYA 2025 - GRAND CITY
+          </Badge>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Geely EX2 <span className="text-pink-400">Xingyuan</span>
+            <div className="text-lg md:text-xl font-normal text-orange-300 mt-2">
+              📍 GIIAS Surabaya: 27-31 Agustus 2025 di Grand City
             </div>
+          </h1>
+          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            Revolusi SUV Listrik Urban Telah Tiba Di Indonesia!
+          </p>
+
+          <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 mb-12 max-w-4xl mx-auto">
+            <div className="flex items-center space-x-3 mb-3">
+              <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+              <h3 className="font-bold text-orange-800">Status Ketersediaan</h3>
+            </div>
+            <p className="text-orange-700 text-sm leading-relaxed">
+              Geely EX2 (Xingyuan) akan dipamerkan di <strong>GIIAS Surabaya 2025</strong> tanggal{" "}
+              <strong>27-31 Agustus 2025</strong> di <strong>Grand City Surabaya</strong>. Setelah pameran, akan segera
+              hadir di showroom Geely Surabaya. Pre-order sudah dibuka dengan benefit khusus untuk early bird customer!
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+              asChild
+            >
+              <Link href="https://wa.me/6281357046621?text=Halo%2C%20saya%20tertarik%20untuk%20pre-order%20Geely%20EX2%20Xingyuan%20GIIAS%202025">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Pre-Order Sekarang
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4 text-lg font-bold rounded-full bg-transparent"
+              asChild
+            >
+              <Link href="https://maps.google.com/?q=Grand+City+Surabaya" target="_blank">
+                <MapPin className="w-5 h-5 mr-2" />
+                Lokasi GIIAS
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -52,14 +86,14 @@ export default function GeelyEX2Page() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/images/geely-ex2-giias.png"
-                  alt="Geely EX2 GIIAS 2025 - SUV Listrik Urban Premium"
+                  src="/images/geely-ex2-features.png"
+                  alt="Geely EX2 Features - LED Headlights, Safety & Performance"
                   width={800}
                   height={600}
                   className="w-full h-auto"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                  <span className="text-sm font-semibold text-gray-900">GIIAS 2025 Debut</span>
+                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <span className="text-sm font-semibold text-gray-900">Premium Features</span>
                 </div>
               </div>
             </div>
@@ -67,14 +101,17 @@ export default function GeelyEX2Page() {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Debut Spektakuler di GIIAS 2025</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Debut Spektakuler di GIIAS Surabaya 2025
+                </h2>
                 <div className="prose prose-lg text-gray-600 space-y-4">
                   <p>
                     <strong>Geely Auto Indonesia</strong> secara resmi mengawali babak baru di industri otomotif
                     nasional melalui penampilan perdananya di ajang{" "}
-                    <strong>GAIKINDO Indonesia International Auto Show (GIIAS) 2025</strong>, mengusung tema{" "}
-                    <em>"Geely Universe"</em> yang merefleksikan komitmen global mereka terhadap mobilitas cerdas dan
-                    berkelanjutan di pasar Indonesia.
+                    <strong>GAIKINDO Indonesia International Auto Show (GIIAS) Surabaya 2025</strong> yang akan
+                    berlangsung tanggal <strong>27-31 Agustus 2025</strong> di <strong>Grand City Surabaya</strong>,
+                    mengusung tema <em>"Geely Universe"</em> yang merefleksikan komitmen global mereka terhadap
+                    mobilitas cerdas dan berkelanjutan di pasar Indonesia.
                   </p>
                   <p>
                     Di antara tiga model global unggulan yang debut perdana untuk pertama kalinya di Indonesia,{" "}
@@ -83,8 +120,8 @@ export default function GeelyEX2Page() {
                     tinggi.
                   </p>
                   <p>
-                    Debut penting SUV listrik ini di GIIAS 2025 tidak hanya menunjukkan kapabilitas dan keunggulan
-                    teknologi Geely, tetapi juga didukung oleh catatan penjualan Xingyuan yang telah mencapai{" "}
+                    Debut penting SUV listrik ini di GIIAS Surabaya 2025 tidak hanya menunjukkan kapabilitas dan
+                    keunggulan teknologi Geely, tetapi juga didukung oleh catatan penjualan Xingyuan yang telah mencapai{" "}
                     <strong>200.000 unit dalam enam bulan</strong> di pasar Tiongkok.
                   </p>
                 </div>
@@ -116,7 +153,7 @@ export default function GeelyEX2Page() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Mengapa Geely EX2 GIIAS 2025 Wajib Anda Miliki?
+              Mengapa Geely EX2 Xingyuan Wajib Anda Miliki?
             </h2>
           </div>
 
@@ -239,14 +276,14 @@ export default function GeelyEX2Page() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/images/geely-ex2-features.png"
-                  alt="Geely EX2 Features - LED Headlights, Safety & Performance"
+                  src="/images/geely-ex2-giias.png"
+                  alt="Geely EX2 GIIAS 2025 - SUV Listrik Urban Premium"
                   width={800}
                   height={600}
                   className="w-full h-auto"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                  <span className="text-sm font-semibold text-gray-900">Premium Features</span>
+                  <span className="text-sm font-semibold text-gray-900">GIIAS 2025 Display</span>
                 </div>
               </div>
             </div>
@@ -265,20 +302,34 @@ export default function GeelyEX2Page() {
               Jangan Tunggu Lagi! Jadilah Bagian dari Revolusi Ini!
             </h3>
             <p className="text-lg text-pink-100 mb-8">
-              Lakukan Pre-book Geely EX2 GIIAS 2025 di Dealer Geely Ambara Group
+              Kunjungi GIIAS Surabaya 2025 di Grand City (27-31 Agustus) atau lakukan Pre-order sekarang di Dealer Geely
+              Surabaya
             </p>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-white text-pink-600 hover:bg-pink-50 px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
-            asChild
-          >
-            <Link href="https://wa.me/6281357046621?text=Halo%2C%20saya%20tertarik%20untuk%20pre-order%20Geely%20EX2%20GIIAS%202025">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Pre-Order Sekarang - Benefit Khusus!
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-white text-pink-600 hover:bg-pink-50 px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+              asChild
+            >
+              <Link href="https://wa.me/6281357046621?text=Halo%2C%20saya%20tertarik%20untuk%20pre-order%20Geely%20EX2%20Xingyuan%20GIIAS%202025">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Pre-Order Sekarang
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4 text-lg font-bold rounded-full bg-transparent"
+              asChild
+            >
+              <Link href="https://maps.google.com/?q=Grand+City+Surabaya" target="_blank">
+                <MapPin className="w-5 h-5 mr-2" />
+                Lokasi GIIAS
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 

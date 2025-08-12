@@ -1,14 +1,9 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   Shield,
   Zap,
@@ -30,12 +25,6 @@ import { Navbar } from "@/components/navbar"
 export default function GeelyStarrayPage() {
   const [currentExteriorSlide, setCurrentExteriorSlide] = useState(0)
   const [currentInteriorSlide, setCurrentInteriorSlide] = useState(0)
-  const [formData, setFormData] = useState({
-    name: "",
-    whatsapp: "",
-    date: "",
-    time: "",
-  })
 
   const exteriorImages = [
     "/images/starray-exterior-1.webp",
@@ -68,21 +57,6 @@ export default function GeelyStarrayPage() {
     setCurrentInteriorSlide((prev) => (prev - 1 + interiorImages.length) % interiorImages.length)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const message = `Halo, saya tertarik test drive Geely Starray EM-i:
-    
-Nama: ${formData.name}
-WhatsApp: ${formData.whatsapp}
-Tanggal Test Drive: ${formData.date}
-Waktu Test Drive: ${formData.time}
-
-Terima kasih! Saya menunggu konfirmasi dari dealer Geely Surabaya.`
-
-    const whatsappUrl = `https://wa.me/6281357046621?text=${encodeURIComponent(message)}`
-    window.open(whatsappUrl, "_blank")
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -102,12 +76,12 @@ Terima kasih! Saya menunggu konfirmasi dari dealer Geely Surabaya.`
 
         <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
           <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 text-lg animate-pulse">
-            🚗 GIIAS 2025 - SEGERA HADIR DI SURABAYA
+            🚗 GIIAS SURABAYA 2025 - GRAND CITY
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Geely <span className="text-blue-400">Starray EM-i</span>
             <div className="text-lg md:text-xl font-normal text-orange-600 mt-2">
-              📍 Saat ini di GIIAS - Segera Hadir di Surabaya Maret 2025
+              📍 GIIAS Surabaya: 27-31 Agustus 2025 di Grand City
             </div>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
@@ -121,23 +95,37 @@ Terima kasih! Saya menunggu konfirmasi dari dealer Geely Surabaya.`
               <h3 className="font-bold text-orange-800">Status Ketersediaan</h3>
             </div>
             <p className="text-orange-700 leading-relaxed">
-              Geely Starray EM-i saat ini sedang dipamerkan di <strong>GIIAS 2025</strong> dan akan segera hadir di
-              showroom Geely Surabaya pada <strong>Maret 2025</strong>. Jadilah yang pertama merasakan teknologi hybrid
-              terdepan dengan pre-order sekarang dan dapatkan benefit eksklusif!
+              Geely Starray EM-i akan dipamerkan di <strong>GIIAS Surabaya 2025</strong> tanggal{" "}
+              <strong>27-31 Agustus 2025</strong> di <strong>Grand City Surabaya</strong>. Setelah pameran, akan segera
+              hadir di showroom Geely Surabaya. Jadilah yang pertama merasakan teknologi hybrid terdepan dengan
+              pre-order sekarang dan dapatkan benefit eksklusif!
             </p>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
-            onClick={() => {
-              const message =
-                "Halo, saya tertarik untuk pre-order Geely Starray EM-i GIIAS 2025. Mohon informasi benefit khusus dan jadwal kedatangan di Surabaya."
-              window.open(`https://wa.me/6281357046621?text=${encodeURIComponent(message)}`, "_blank")
-            }}
-          >
-            Pre-Order Sekarang - Benefit Khusus!
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
+              onClick={() => {
+                const message =
+                  "Halo, saya tertarik untuk pre-order Geely Starray EM-i GIIAS Surabaya 2025. Mohon informasi benefit khusus dan jadwal kedatangan di Surabaya."
+                window.open(`https://wa.me/6281357046621?text=${encodeURIComponent(message)}`, "_blank")
+              }}
+            >
+              Pre-Order Sekarang - Benefit Khusus!
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold rounded-full bg-transparent"
+              asChild
+            >
+              <Link href="https://maps.google.com/?q=Grand+City+Surabaya" target="_blank">
+                <MapPin className="w-5 h-5 mr-2" />
+                Lokasi GIIAS
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -442,99 +430,82 @@ Terima kasih! Saya menunggu konfirmasi dari dealer Geely Surabaya.`
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section id="booking" className="py-20 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Pre-Order Geely Starray EM-i</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Jadilah yang pertama memiliki hybrid SUV premium terdepan. Pre-order sekarang dan dapatkan benefit
-              eksklusif serta prioritas delivery di Surabaya.
+      {/* Pre-Order Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Starray EM-i adalah masa depan mobilitas hybrid</h2>
+          <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            Efisiensi tinggi, teknologi canggih, dan kenyamanan premium
+          </p>
+
+          <div className="max-w-2xl mx-auto mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Jadilah yang Pertama Memiliki Revolusi Hybrid!</h3>
+            <p className="text-lg text-blue-100 mb-8">
+              Kunjungi GIIAS Surabaya 2025 di Grand City (27-31 Agustus) atau lakukan Pre-order sekarang di Dealer Geely
+              Surabaya dan dapatkan benefit eksklusif early bird!
             </p>
           </div>
 
-          <Card className="max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="text-gray-700">
-                    Nama Lengkap
-                  </Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="mt-1"
-                    aria-label="Masukkan nama lengkap untuk test drive"
-                  />
-                </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+              onClick={() => {
+                const message =
+                  "Halo, saya tertarik untuk pre-order Geely Starray EM-i GIIAS Surabaya 2025. Mohon informasi benefit khusus dan jadwal kedatangan di Surabaya."
+                window.open(`https://wa.me/6281357046621?text=${encodeURIComponent(message)}`, "_blank")
+              }}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Pre-Order Sekarang - Benefit Khusus!
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-bold rounded-full bg-transparent"
+              asChild
+            >
+              <Link href="https://maps.google.com/?q=Grand+City+Surabaya" target="_blank">
+                <MapPin className="w-5 h-5 mr-2" />
+                Lokasi GIIAS
+              </Link>
+            </Button>
+          </div>
 
-                <div>
-                  <Label htmlFor="whatsapp" className="text-gray-700">
-                    Nomor WhatsApp (Wajib)
-                  </Label>
-                  <Input
-                    id="whatsapp"
-                    type="tel"
-                    value={formData.whatsapp}
-                    onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                    required
-                    className="mt-1"
-                    placeholder="08123456789"
-                    aria-label="Nomor WhatsApp untuk konfirmasi test drive"
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="date" className="text-gray-700">
-                      Pilih Tanggal Test Drive
-                    </Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      required
-                      className="mt-1"
-                      aria-label="Pilih tanggal test drive"
-                    />
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <h4 className="text-2xl font-bold mb-6">Benefit Pre-Order Eksklusif</h4>
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold">1</span>
                   </div>
-
                   <div>
-                    <Label htmlFor="time" className="text-gray-700">
-                      Pilih Jam Test Drive
-                    </Label>
-                    <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, time: value })}>
-                      <SelectTrigger className="mt-1" aria-label="Pilih waktu test drive">
-                        <SelectValue placeholder="Pilih waktu yang sesuai" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="pagi">Pagi (09:00-12:00)</SelectItem>
-                        <SelectItem value="siang">Siang (13:00-16:00)</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <h5 className="font-bold mb-2">Prioritas Delivery</h5>
+                    <p className="text-blue-100 text-sm">Dapatkan unit pertama yang tiba di Surabaya</p>
                   </div>
                 </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-4 text-base md:text-lg"
-                  aria-label="Kirim permintaan test drive Geely Starray EM-i"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  JADWALKAN TEST DRIVE GRATIS
-                </Button>
-
-                <p className="text-sm text-gray-600 text-center">
-                  Tim dealer resmi Geely Surabaya akan segera menghubungi Anda melalui WhatsApp untuk konfirmasi jadwal
-                  test drive. Data pribadi Anda 100% aman dan terlindungi.
-                </p>
-              </form>
-            </CardContent>
-          </Card>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold">2</span>
+                  </div>
+                  <div>
+                    <h5 className="font-bold mb-2">Harga Spesial</h5>
+                    <p className="text-blue-100 text-sm">Harga pre-order lebih hemat dari harga launching</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold">3</span>
+                  </div>
+                  <div>
+                    <h5 className="font-bold mb-2">Exclusive Package</h5>
+                    <p className="text-blue-100 text-sm">Aksesoris premium dan extended warranty</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
